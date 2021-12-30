@@ -1,5 +1,4 @@
 import React from "react";
-// import { bgColor } from "../utils/BgTailwind";
 
 export default function Select({ label, defaultValue, set }) {
   const bgColor = [
