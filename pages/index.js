@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Select from "../components/Select";
 import IndexPage from "../components/IndexPage";
-import "animate.css";
+import Image from "next/image";
+import GitHub from "../public/GithubIcon.png";
 
 export default function Home() {
   const [changeColor, setChangeColor] = useState(false);
@@ -15,32 +16,29 @@ export default function Home() {
   return (
     <>
       <IndexPage />
-      <div className="w-full h-full overflow-hidden ">
-        <div id="container" className="w-screen h-screen bg-black  overflow-hidden  ">
-          <div className="w-full h-full relative  blur-3xl ">
-            <div className="w-screen h-screen  top-0 left-0 bg-transparent absolute blur-2xl block z-[200]" />
+      <div className="w-full h-full ">
+        <div id="container" className="w-screen h-screen bg-black ">
+          <div className="w-full h-full relative  blur-3xl overflow-hidden ">
             <div
-              className={`h-[80%] w-[80%] left-[-20%] top-[-20%] absolute ${c1} animate-right z-[1]`}
+              className={`h-[90%] w-[90%] left-[-20%] top-[-10%] absolute ${c1} animate-right z-[1]`}
             />
             <div
               className={`h-[70%] w-[70%] right-[-20%] top-[-20%] absolute ${c2} animate-left z-[2]`}
             />
 
             <div
-              className={`h-[50%] w-[80%] left-[-20%] bottom-[-10%] absolute ${c3} z-[8] animate-top`}
+              className={`h-[50%] w-[70%] left-[-10%] bottom-[-10%] absolute ${c3} z-[8] animate-top`}
             />
             <div
-              className={`h-[20%] w-[60%] right-[20%] bottom-[20%] r ${c4} absolute animate-top z-[4]`}
+              className={`h-[20%] w-[0%] right-[20%] bottom-[20%] ${c4} absolute animate-left z-[4]`}
             />
             <div
-              className={`h-[20%] w-[20%] right-[20%] bottom-[20%]  ${c5} absolute animate-right z-[6]`}
+              className={`h-[50%] w-[20%] right-[20%] bottom-[20%]  ${c5} absolute animate-right z-[6]`}
             />
           </div>
 
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-[200] ml-6">
-            <h1 className="text-white font-black text-4xl md:text-6xl animate__animated animate__pulse">
-              Tailwind Aurora
-            </h1>
+            <h1 className="text-white font-black text-4xl md:text-6xl">Tailwind Aurora</h1>
             <div className="flex items-center">
               <button
                 onClick={() => setChangeColor(!changeColor)}
@@ -48,6 +46,15 @@ export default function Home() {
               >
                 Change color
               </button>
+              <a
+                href="https://github.com/webdiego/Tailwind-Aurora"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="flex ml-2">
+                  <Image src={GitHub} width="20" height="20" alt="github" />
+                </div>
+              </a>
             </div>
 
             {changeColor && (
